@@ -1,0 +1,36 @@
+# Copyright 2021 Pants project contributors.
+# Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+[GLOBAL]
+pants_version = "2.13.0.dev1"
+backend_packages = [
+  # This repository demonstrates using Pants with Kotlin.
+  #
+  # Linters/formatters are also hosted in independent backends, to allow them to be independently
+  # enabled.
+  "pants.backend.experimental.kotlin",
+  "pants.backend.experimental.kotlin.lint.ktlint",
+]
+
+[source]
+# Pants supports many layouts of sources: from Maven/SBT style project-centric layouts, to
+# monorepo layouts. In this case, we have a monorepo layout, with all sources under a `src`
+# directory, organized by type.
+#
+# See https://www.pantsbuild.org/docs/source-roots for more information.
+root_patterns = ["/src/*"]
+
+# Configure the specific Kotlin version to use for a resolve. This version must match the version used for the
+# `jvm_artifact` targets providing the Kotlin runtime library jars.
+[kotlin.version_for_resolve]
+jvm-default = "1.6.21"
+
+[jvm]
+# Configure remote debugging options that will be used with `test --debug`.
+debug_args = [
+  "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005",
+]
+
+[anonymous-telemetry]
+enabled = true
+repo_id = "2E2A8DE2-E6E5-4B39-BF33-B6FC915E40AC"
