@@ -52,4 +52,3 @@ kotlinc_plugin(
     plugin_id="serialization",
     artifact="3rdparty/jvm/org/jetbrains/kotlin:org.jetbrains.kotlin_kotlin-serialization",
 )
-
