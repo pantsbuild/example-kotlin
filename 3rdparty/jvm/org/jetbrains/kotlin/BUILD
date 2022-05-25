@@ -48,7 +48,5 @@ jvm_artifact(
 
 kotlinc_plugin(
     name="serialization",
-    # TODO: plugin_id is required but should not be. It should default to the target name.
-    plugin_id="serialization",
     artifact="3rdparty/jvm/org/jetbrains/kotlin:org.jetbrains.kotlin_kotlin-serialization",
 )
