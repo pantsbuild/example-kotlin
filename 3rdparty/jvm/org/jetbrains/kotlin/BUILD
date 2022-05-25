@@ -26,6 +26,15 @@ jvm_artifact(
     version="1.6.21",
 )
 
+# Pants supports using JUnit to run Kotlin tests. The resolve must include a `jvm_artifact` for the
+# Kotlin test runtime.
+jvm_artifact(
+    name="org.jetbrains.kotlin_kotlin-test-junit",
+    group="org.jetbrains.kotlin",
+    artifact="kotlin-test-junit",
+    version="1.6.21",
+)
+
 # Pants supports using Kotlin compiler plugins. To use a plugin, declare a `kotlinc_plugin` target
 # for the plugin's metadata and point that target at a `jvm_artifact` for the actual plugin jar.
 #

@@ -2,7 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.13.0.dev3"
+pants_version = "2.13.0a0"
 backend_packages = [
   # This repository demonstrates using Pants with Kotlin.
   #
@@ -10,6 +10,9 @@ backend_packages = [
   # enabled.
   "pants.backend.experimental.kotlin",
   "pants.backend.experimental.kotlin.lint.ktlint",
+
+  # Also enable Java to demonstrate cross-language support.
+  "pants.backend.experimental.java",
 ]
 
 # silence deprecation by opting in to the future
@@ -21,7 +24,7 @@ use_deprecated_directory_cli_args_semantics = false
 # directory, organized by type.
 #
 # See https://www.pantsbuild.org/docs/source-roots for more information.
-root_patterns = ["/src/*"]
+root_patterns = ["/src/*", "/test/*"]
 
 # Configure the specific Kotlin version to use for a resolve. This version must match the version used for the
 # `jvm_artifact` targets providing the Kotlin runtime library jars.
