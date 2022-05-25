@@ -1,8 +1,8 @@
-# Copyright 2021 Pants project contributors.
+# Copyright 2022 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.13.0.dev1"
+pants_version = "2.13.0.dev3"
 backend_packages = [
   # This repository demonstrates using Pants with Kotlin.
   #
@@ -11,6 +11,9 @@ backend_packages = [
   "pants.backend.experimental.kotlin",
   "pants.backend.experimental.kotlin.lint.ktlint",
 ]
+
+# silence deprecation by opting in to the future
+use_deprecated_directory_cli_args_semantics = false
 
 [source]
 # Pants supports many layouts of sources: from Maven/SBT style project-centric layouts, to
