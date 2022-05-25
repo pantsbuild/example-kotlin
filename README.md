@@ -22,9 +22,8 @@ Pants commands are called _goals_. You can get a list of goals with
 ./pants help goals
 ```
 
-Most goals take arguments to run on. To run on a single directory, use the directory name with 
-`:` at the end. To recursively run on a directory and all its subdirectories, add `::` to the 
-end.
+Most goals take arguments to run on. To run on a single directory, just use the directory name.
+To recursively run on a directory and all its subdirectories, add `::` to the end.
 
 For example:
 
@@ -52,7 +51,7 @@ Try these out in this repo!
 
 ```
 ./pants fmt ::  # Format all files.
-./pants fmt src/jvm:  # Format only files in this directory (non-recursively).
+./pants fmt src/jvm  # Format only files in this directory (non-recursively).
 ./pants lint src/jvm::  # Check that all files under `src/jvm` are formatted (recursively).
 ```
 
@@ -68,7 +67,7 @@ Try these out in this repo!
 Writes the result to the `dist/` folder.
 
 ```
-./pants package src/jvm/org/pantsbuild/example/json:  # Build one binary.
+./pants package src/jvm/org/pantsbuild/example/json  # Build binaries in this directory.
 ./pants package ::  # Create all binaries.
 ```
 
@@ -91,5 +90,5 @@ That is, find what code depends on a particular files.
 ## Count lines of code
 
 ```
-./pants count-loc '**/*'
+./pants count-loc ::
 ```
