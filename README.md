@@ -1,9 +1,11 @@
 # example-kotlin
 
-An example repository to demonstrate Pants's experimental Kotlin.
+This repository demonstrates how to use Kotlin with Pants. (Pants also supports Java and Scala, which 
+are demonstrared in the [`example-jvm` repository](https://github.com/pantsbuild/example-jvm/).)
 
-This repository demonstrates how to use Kotlin with Pants. Pants also supports Java and Scala, which 
-are demonstrared in the [`example-jvm` repository](https://github.com/pantsbuild/example-jvm/).
+There are two examples:
+- [Kotlin calling into Java plus a JUnit test](src/jvm/org/pantsbuild/example/app/ExampleApp.kt)
+- [Serializing/deserializing JSON using the Kotlin serialization compiler plugin](src/jvm/org/pantsbuild/example/json/JsonExample.kt)
 
 This is only one possible way of laying out your project with Pants. See 
 [pantsbuild.org/docs/source-roots#examples](https://www.pantsbuild.org/docs/source-roots#examples) 
