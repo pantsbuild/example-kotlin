@@ -2,7 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "2.13.0"
+pants_version = "2.14.0"
 backend_packages = [
   # This repository demonstrates using Pants with Kotlin.
   #
@@ -14,10 +14,6 @@ backend_packages = [
   # Also enable Java to demonstrate cross-language support.
   "pants.backend.experimental.java",
 ]
-
-# silence deprecations by opting in to the future
-use_deprecated_directory_cli_args_semantics = false
-use_deprecated_pex_binary_run_semantics = false
 
 [source]
 # Pants supports many layouts of sources: from Maven/SBT style project-centric layouts, to
