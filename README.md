@@ -13,15 +13,17 @@ for some other example layouts.
 
 # Running Pants
 
-You run Pants goals using the `./pants` wrapper script, which will bootstrap the
-configured version of Pants if necessary.
+You run Pants goals using the `pants` launcher binary, which will bootstrap the
+version of Pants configured for this repo if necessary.
+
+See [here](https://www.pantsbuild.org/docs/installation) for how to install the `pants` binary.
 
 # Goals
 
 Pants commands are called _goals_. You can get a list of goals with
 
 ```
-./pants help goals
+pants help goals
 ```
 
 Most goals take arguments to run on. To run on a single directory, just use the directory name.
@@ -30,19 +32,19 @@ To recursively run on a directory and all its subdirectories, add `::` to the en
 For example:
 
 ```
-./pants lint src: 3rdparty::
+pants lint src: 3rdparty::
 ```
 
 You can run on all changed files:
 
 ```
-./pants --changed-since=HEAD lint
+pants --changed-since=HEAD lint
 ```
 
 You can run on all changed files, and any of their "dependees":
 
 ```
-./pants --changed-since=HEAD --changed-dependees=transitive test
+pants --changed-since=HEAD --changed-dependees=transitive test
 ```
 
 # Example Goals
@@ -52,16 +54,16 @@ Try these out in this repo!
 ## Run `ktlint`
 
 ```
-./pants fmt ::  # Format all files.
-./pants fmt src/jvm  # Format only files in this directory (non-recursively).
-./pants lint src/jvm::  # Check that all files under `src/jvm` are formatted (recursively).
+pants fmt ::  # Format all files.
+pants fmt src/jvm  # Format only files in this directory (non-recursively).
+pants lint src/jvm::  # Check that all files under `src/jvm` are formatted (recursively).
 ```
 
 ## Check compilation
 
 ```
-./pants check ::  # Compile everything.
-./pants check src/jvm/org/pantsbuild/example/json/JsonExample.kt  # Compile a file and its deps.
+pants check ::  # Compile everything.
+pants check src/jvm/org/pantsbuild/example/json/JsonExample.kt  # Compile a file and its deps.
 ```
 
 ## Create a binary file
@@ -69,15 +71,15 @@ Try these out in this repo!
 Writes the result to the `dist/` folder.
 
 ```
-./pants package src/jvm/org/pantsbuild/example/json  # Build binaries in this directory.
-./pants package ::  # Create all binaries.
+pants package src/jvm/org/pantsbuild/example/json  # Build binaries in this directory.
+pants package ::  # Create all binaries.
 ```
 
 ## Determine dependencies
 
 ```
-./pants dependencies src/jvm::
-./pants dependencies --transitive src/jvm::
+pants dependencies src/jvm::
+pants dependencies --transitive src/jvm::
 ```
 
 ## Determine dependees
@@ -85,12 +87,12 @@ Writes the result to the `dist/` folder.
 That is, find what code depends on a particular files.
 
 ```
-./pants dependees src/jvm/org/pantsbuild/example/json::
-./pants dependees --transitive src/jvm/org/pantsbuild/example/json/JsonExample.kt
+pants dependees src/jvm/org/pantsbuild/example/json::
+pants dependees --transitive src/jvm/org/pantsbuild/example/json/JsonExample.kt
 ```
 
 ## Count lines of code
 
 ```
-./pants count-loc ::
+pants count-loc ::
 ```
