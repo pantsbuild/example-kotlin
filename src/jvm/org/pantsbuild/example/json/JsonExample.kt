@@ -23,7 +23,10 @@ fun decodeUser(file: String) {
     println("Email: ${user.email}")
 }
 
-fun encodeUser(name: String, email: String) {
+fun encodeUser(
+    name: String,
+    email: String,
+) {
     val user = User(name, email)
     println(Json.encodeToString(user))
 }
